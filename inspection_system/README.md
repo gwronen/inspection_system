@@ -60,7 +60,7 @@ Paths are relative to this file (`inspection_system/README.md`); assets live in 
 
 ### 2. Per-cycle control flow (Mermaid + static export)
 
-On **GitHub**, **GitLab**, and many Markdown previews, the diagram below renders interactively. If Mermaid is not available (PDF, some viewers), use the PNG export that follows.
+On **GitHub**, **GitLab**, and many Markdown previews, the diagram below renders interactively. If Mermaid is not available (PDF, some viewers), expand **Static PNG export** below and save or copy the image.
 
 ```mermaid
 flowchart TD
@@ -105,9 +105,12 @@ flowchart TD
   DEC -->|Low confidence or minor defect| RV[REVIEW_REQUIRED]
 ```
 
-**Static render** (same control flow; filenames with spaces are URL-encoded):
+<details>
+<summary>Static PNG export — per-cycle control flow (for print / viewers without Mermaid)</summary>
 
 ![Static export of the per-cycle control-flow diagram](../mermaid-diagram%20(1).png)
+
+</details>
 
 ### 3. Visual inspection data pipeline (infographic)
 
@@ -135,9 +138,12 @@ flowchart LR
   SL --> TID[Traceability by cycle_id]
 ```
 
-**Static render** (data-pipeline variant):
+<details>
+<summary>Static PNG export — data &amp; metrics pipeline (for print / viewers without Mermaid)</summary>
 
 ![Static export of the data and metrics pipeline diagram](../mermaid-diagram%20(2).png)
+
+</details>
 
 ---
 
