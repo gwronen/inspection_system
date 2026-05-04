@@ -1,0 +1,306 @@
+You are an expert software architect and senior backend engineer.
+
+Build a clean, production-minded Python project skeleton for an offline AI-guided manufacturing inspection system.
+
+========================================================
+CONTEXT (VERY IMPORTANT)
+========================================================
+
+This system runs on a local inspection station (offline).
+It serves ONE production line.
+
+The system processes inspection cycles sequentially:
+- one trigger → one inspection cycle → complete → next cycle
+- do NOT design async pipelines across cycles
+- do NOT use queues, brokers, or distributed systems
+
+Parallelism is allowed ONLY where physically required:
+- camera capture must be parallel (same part, same time)
+
+========================================================
+SYSTEM FLOW (MUST BE STRICTLY FOLLOWED)
+========================================================
+
+Trigger
+→ Parallel Capture (2 cameras)
+→ Per-Camera Processing:
+    Preprocess → Inference → Post-process
+→ Aggregate Results
+→ Report
+
+========================================================
+DELIVERABLES (MANDATORY)
+========================================================
+
+You MUST generate:
+
+1. prompt.txt (this exact prompt)
+2. Runnable Python project that executes 10 mock inspection cycles
+3. README.md that explains the system, usage, and improvements
+
+========================================================
+GOAL
+========================================================
+
+Generate a runnable Python project that simulates 10 inspection cycles with mock implementations.
+
+Focus on:
+- architecture
+- separation of concerns
+- reliability
+- observability
+- manufacturing realism
+
+NOT on:
+- real ML
+- real image processing
+
+========================================================
+PROJECT STRUCTURE
+========================================================
+
+inspection_system/
+  README.md
+  prompt.txt
+  requirements.txt
+  src/
+    main.py
+    config.py
+    domain/models.py
+    controller/trigger.py
+    camera/camera.py
+    camera/capture_service.py
+    pipeline/preprocessor.py
+    pipeline/inference.py
+    pipeline/postprocessor.py
+    pipeline/inspection_pipeline.py
+    aggregation/aggregator.py
+    reporting/reporter.py
+    observability/logger.py
+    errors.py
+  tests/
+
+========================================================
+CORE BEHAVIOR
+========================================================
+
+1. Trigger
+Simulate 10 triggers.
+Each trigger includes:
+- cycle_id
+- part_id
+- timestamp
+
+2. Parallel Capture
+- 2 cameras
+- capture in parallel using ThreadPoolExecutor
+- simulate delay and occasional failure
+
+Each frame:
+- camera_id
+- cycle_id
+- timestamp
+- mock quality attributes (brightness, blur, glare)
+
+3. Per-Camera Processing
+Explicit pipeline:
+- preprocess
+- inference
+- post-process
+
+Mock inference returns:
+- defects
+- confidence
+- severity
+
+4. Aggregation
+Combine camera results into one decision.
+
+========================================================
+QUALITY & SAFETY (CRITICAL)
+========================================================
+
+System must be FAIL-SAFE.
+
+NEVER return PASS if inspection is incomplete or unreliable.
+
+Implement validation layers:
+
+A. Camera Health
+- if camera fails or times out → mark missing result
+
+B. Frame Validation
+- validate:
+  - brightness / glare
+  - blur
+  - completeness
+- if invalid → mark INVALID_FRAME
+
+C. Inference Confidence
+- if confidence < threshold → LOW_CONFIDENCE
+
+========================================================
+AGGREGATION RULES (STRICT)
+========================================================
+
+- any critical defect → FAIL
+- any missing camera → ERROR (INSPECTION_INCOMPLETE)
+- any invalid frame → REVIEW_REQUIRED or FAIL
+- any low confidence → REVIEW_REQUIRED
+- ONLY if ALL cameras valid AND no defects → PASS
+
+========================================================
+RECOVERY BEHAVIOR
+========================================================
+
+- system must NOT crash on errors
+- handle errors per cycle
+- generate report even for failures
+
+Retry:
+- retry capture once if it fails
+- if still fails → ERROR
+
+Continue processing next cycles always.
+
+========================================================
+OBSERVABILITY
+========================================================
+
+For each cycle log:
+- trigger received
+- capture start/end
+- per-camera processing
+- aggregation
+- report creation
+- errors
+
+Track timing:
+- capture
+- processing
+- aggregation
+- total cycle time
+
+========================================================
+REPORTING
+========================================================
+
+Generate JSON report per cycle.
+
+Include:
+- cycle_id
+- part_id
+- final_status (PASS / FAIL / ERROR / REVIEW_REQUIRED)
+- camera statuses
+- defects
+- confidence
+- quality flags
+- error reasons
+- timing breakdown
+
+Also print concise console summary.
+
+========================================================
+DEMO REQUIREMENTS
+========================================================
+
+Run 10 cycles.
+
+Must include:
+- PASS case
+- FAIL case (defect)
+- camera failure
+- glare / bad frame
+- low confidence case
+
+========================================================
+ENTRY POINT
+========================================================
+
+Command:
+
+python src/main.py
+
+Should:
+- run 10 cycles
+- print summary:
+  total cycles
+  passed
+  failed
+  errors
+  avg cycle time
+
+========================================================
+TESTS
+========================================================
+
+Add basic pytest tests:
+- aggregation FAIL on defect
+- aggregation ERROR on missing camera
+- aggregation PASS when all valid
+- pipeline runs single cycle
+
+========================================================
+README (VERY IMPORTANT FOR EVALUATION)
+========================================================
+
+Write a clear and concise README.md including:
+
+1. Project Purpose
+Explain what the system does and its manufacturing context.
+
+2. System Architecture
+Describe the flow:
+Trigger → Parallel Capture → Per-Camera Processing → Aggregation → Report
+
+3. Design Decisions
+Explain:
+- why capture is parallel
+- why processing cycles are sequential
+- why NO queue / distributed system is used
+- why system is offline
+
+4. Reliability & Fail-Safe Approach
+Explain:
+- how camera failures are handled
+- how bad frames (glare, blur) are handled
+- why system never returns PASS on incomplete data
+- recovery strategy (retry + safe failure)
+
+5. Observability
+Explain logging and timing.
+
+6. How to Run
+- install requirements
+- run the system
+- run tests
+
+7. What Was Mocked
+Explain all mocked components (cameras, inference, defects).
+
+8. What I Would Improve in Production
+Examples:
+- real camera SDK integration
+- real ML models
+- hardware health monitoring
+- UI / operator dashboard
+- persistent storage
+- multi-station scaling (where queue WOULD be relevant)
+
+========================================================
+prompt.txt
+========================================================
+
+Save this prompt EXACTLY into prompt.txt.
+
+========================================================
+IMPORTANT
+========================================================
+
+Prefer clarity over complexity.
+No frameworks.
+No cloud.
+No microservices.
+No queues.
+
+Make it easy to understand, well-structured, and runnable.

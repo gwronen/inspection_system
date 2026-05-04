@@ -1,0 +1,78 @@
+{
+  "cycle_id": 4,
+  "part_id": "PART-00004",
+  "final_status": "REVIEW_REQUIRED",
+  "camera_results": {
+    "CAM_A": {
+      "camera_id": "CAM_A",
+      "capture_status": "OK",
+      "frame_integrity_ok": true,
+      "quality_flags": [
+        "HIGH_GLARE",
+        "INVALID_FRAME"
+      ],
+      "low_confidence": false,
+      "defects": [],
+      "confidence": null,
+      "processing_notes": [
+        "INVALID_FRAME_inference_skipped_for_safety"
+      ]
+    },
+    "CAM_B": {
+      "camera_id": "CAM_B",
+      "capture_status": "OK",
+      "frame_integrity_ok": true,
+      "quality_flags": [],
+      "low_confidence": false,
+      "defects": [],
+      "confidence": 0.9033858285363663,
+      "processing_notes": []
+    }
+  },
+  "defects": [],
+  "confidence": 0.9033858285363663,
+  "quality_flags": [
+    "CAM_A:HIGH_GLARE",
+    "CAM_A:INVALID_FRAME"
+  ],
+  "error_reasons": [
+    "INVALID_FRAME on CAM_A"
+  ],
+  "timing": {
+    "capture_seconds": 0.05912920000264421,
+    "processing_seconds": 0.06687850004527718,
+    "aggregation_seconds": 0.00013729999773204327,
+    "report_seconds": 0.0009092999971471727,
+    "total_seconds": 0.12753920000977814
+  },
+  "lifecycle": [
+    {
+      "stage": "trigger",
+      "started_at": "2026-05-04T12:08:21.238786+00:00",
+      "ended_at": "2026-05-04T12:08:21.238786+00:00",
+      "part_id": "PART-00004"
+    },
+    {
+      "stage": "capture_parallel",
+      "started_at": "2026-05-04T12:08:21.238786+00:00",
+      "ended_at": "2026-05-04T12:08:21.298096+00:00"
+    },
+    {
+      "stage": "processing",
+      "started_at": "2026-05-04T12:08:21.298096+00:00",
+      "ended_at": "2026-05-04T12:08:21.365414+00:00"
+    },
+    {
+      "stage": "aggregation",
+      "started_at": "2026-05-04T12:08:21.365414+00:00",
+      "ended_at": "2026-05-04T12:08:21.365414+00:00"
+    },
+    {
+      "stage": "report",
+      "started_at": "2026-05-04T12:08:21.365414+00:00",
+      "ended_at": "2026-05-04T12:08:21.365414+00:00"
+    }
+  ],
+  "sla_violations": [],
+  "created_at": "2026-05-04T12:08:21.365414+00:00"
+}

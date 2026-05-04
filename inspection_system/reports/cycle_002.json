@@ -1,0 +1,82 @@
+{
+  "cycle_id": 2,
+  "part_id": "PART-00002",
+  "final_status": "FAIL",
+  "camera_results": {
+    "CAM_A": {
+      "camera_id": "CAM_A",
+      "capture_status": "OK",
+      "frame_integrity_ok": true,
+      "quality_flags": [],
+      "low_confidence": false,
+      "defects": [
+        {
+          "code": "SCRATCH_TOP",
+          "severity": "CRITICAL",
+          "description": "edge scratch cluster"
+        }
+      ],
+      "confidence": 0.8649436101676189,
+      "processing_notes": []
+    },
+    "CAM_B": {
+      "camera_id": "CAM_B",
+      "capture_status": "OK",
+      "frame_integrity_ok": true,
+      "quality_flags": [],
+      "low_confidence": false,
+      "defects": [],
+      "confidence": 0.7963925344134188,
+      "processing_notes": []
+    }
+  },
+  "defects": [
+    {
+      "code": "SCRATCH_TOP",
+      "severity": "CRITICAL",
+      "description": "edge scratch cluster"
+    }
+  ],
+  "confidence": 0.7963925344134188,
+  "quality_flags": [],
+  "error_reasons": [
+    "DEFECT_FAIL:SCRATCH_TOP:CRITICAL"
+  ],
+  "timing": {
+    "capture_seconds": 0.07676780002657324,
+    "processing_seconds": 0.2053781000431627,
+    "aggregation_seconds": 0.0002701000194065273,
+    "report_seconds": 0.0016165999695658684,
+    "total_seconds": 0.28478550002910197
+  },
+  "lifecycle": [
+    {
+      "stage": "trigger",
+      "started_at": "2026-05-04T12:08:20.750323+00:00",
+      "ended_at": "2026-05-04T12:08:20.750323+00:00",
+      "part_id": "PART-00002"
+    },
+    {
+      "stage": "capture_parallel",
+      "started_at": "2026-05-04T12:08:20.750323+00:00",
+      "ended_at": "2026-05-04T12:08:20.826826+00:00"
+    },
+    {
+      "stage": "processing",
+      "started_at": "2026-05-04T12:08:20.826826+00:00",
+      "ended_at": "2026-05-04T12:08:21.032183+00:00"
+    },
+    {
+      "stage": "aggregation",
+      "started_at": "2026-05-04T12:08:21.032183+00:00",
+      "ended_at": "2026-05-04T12:08:21.033343+00:00"
+    },
+    {
+      "stage": "report",
+      "started_at": "2026-05-04T12:08:21.033343+00:00",
+      "ended_at": "2026-05-04T12:08:21.033343+00:00"
+    }
+  ],
+  "sla_violations": [],
+  "created_at": "2026-05-04T12:08:21.033343+00:00"
+}

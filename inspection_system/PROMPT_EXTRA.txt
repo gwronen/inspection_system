@@ -1,0 +1,226 @@
+You are an expert software architect with VP R&D-level thinking.
+
+You are given an existing Python project that implements an offline manufacturing inspection system.
+
+Your task is to EXTEND and IMPROVE the system with production-grade considerations.
+
+DO NOT rewrite the system.
+DO NOT change the core architecture or flow.
+ONLY extend and enhance.
+
+========================================================
+MANDATORY OUTPUT
+========================================================
+
+You MUST do ALL of the following:
+
+1. Create a new file in the project root:
+   PROMPT_EXTRA.txt
+
+   This file must contain this entire prompt EXACTLY as written.
+
+2. Update the existing codebase to include:
+   - performance awareness
+   - failure modeling
+   - recovery behavior
+   - metrics collection
+   - configurability
+
+3. SIGNIFICANTLY UPDATE README.md with detailed explanations (see below)
+
+========================================================
+SYSTEM CONSTRAINTS (DO NOT BREAK)
+========================================================
+
+- System is offline
+- Single inspection station
+- One cycle at a time (sequential)
+- Parallelism ONLY for camera capture
+- NO queues
+- NO microservices
+- NO cloud
+
+========================================================
+EXTENSIONS TO IMPLEMENT
+========================================================
+
+1. PRODUCTION CONSTRAINTS
+
+Add safeguards so that:
+- each cycle completes within bounded time
+- system NEVER blocks indefinitely
+- every cycle produces deterministic result:
+  PASS / FAIL / ERROR / REVIEW_REQUIRED
+
+--------------------------------------------------------
+
+2. PERFORMANCE TARGETS (MOCK SLA)
+
+Introduce timing expectations:
+
+- max cycle time (e.g. 200ms)
+- capture budget
+- processing budget
+- aggregation/report budget
+
+Add:
+- timing tracking per stage
+- SLA violation logging
+
+--------------------------------------------------------
+
+3. FAILURE MODES
+
+Explicitly simulate and handle:
+
+- camera timeout / disconnect
+- corrupted frame
+- glare / overexposure
+- blur / low quality
+- low confidence inference
+- missing camera result
+
+--------------------------------------------------------
+
+4. RECOVERY STRATEGY
+
+Implement:
+
+- retry capture once for transient failure
+- if still failing → ERROR
+- never infinite retries
+- never block pipeline
+- always continue to next cycle
+
+--------------------------------------------------------
+
+5. METRICS COLLECTION
+
+Add:
+
+- total cycles
+- PASS / FAIL / ERROR counts
+- failure rate
+- avg cycle time
+- max cycle time
+- camera reliability
+- % low confidence
+
+Print summary at the end.
+
+--------------------------------------------------------
+
+6. TRACEABILITY
+
+Ensure:
+
+- all logs include cycle_id
+- each stage logs start/end
+- reports include full lifecycle
+
+--------------------------------------------------------
+
+7. CONFIGURABILITY
+
+Move to config:
+
+- thresholds (confidence, glare, blur)
+- timeouts
+- retry policy
+
+--------------------------------------------------------
+
+8. TEST IMPROVEMENTS
+
+Extend tests to include:
+
+- failure scenarios
+- recovery validation
+- aggregation edge cases
+
+========================================================
+README UPDATE (MANDATORY)
+========================================================
+
+You MUST significantly UPDATE README.md.
+
+This is a critical deliverable.
+
+The README must be structured and clearly written.
+
+Add the following sections with meaningful explanations:
+
+1. Project Purpose
+
+2. System Architecture  
+Explain the full flow:
+Trigger → Parallel Capture → Per-Camera Processing → Aggregation → Report
+
+3. Production Constraints  
+Explain real-world manufacturing assumptions
+
+4. Performance Targets  
+Explain SLA thinking
+
+5. Failure Modes  
+List and explain all handled failures
+
+6. Recovery Strategy  
+Explain behavior under failure
+
+7. Metrics & Observability  
+Explain what is measured and why
+
+8. Traceability  
+Explain how a cycle is debugged end-to-end
+
+9. Engineering Decisions  
+Explain:
+- why capture is parallel
+- why cycles are sequential
+- why no queue is used
+- why system is offline
+
+10. What I Would Improve in Production (VERY IMPORTANT)
+
+Include:
+- real camera SDK integration
+- real ML models
+- hardware monitoring
+- UI / operator dashboard
+- persistent storage
+- multi-station scaling (and when queues become relevant)
+
+--------------------------------------------------------
+
+IMPORTANT:
+- Do NOT leave sections empty
+- Do NOT write only bullet points
+- Write short but meaningful explanations
+
+Also include this statement:
+
+"In manufacturing systems, incorrect PASS decisions are more critical than false FAILs, therefore the system is designed to be fail-safe."
+
+========================================================
+IMPORTANT RULES
+========================================================
+
+- Do NOT introduce queues
+- Do NOT introduce microservices
+- Do NOT introduce cloud
+- Do NOT over-engineer
+
+- Keep code clean and readable
+- Prefer clarity over complexity
+
+========================================================
+FINAL RESULT
+========================================================
+
+At the end:
+
+- PROMPT_EXTRA.txt exists
+- README.md is significantly improved
+- system includes production-grade thinking
+- original functionality still works

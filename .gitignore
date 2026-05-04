@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+env/
+
+# Test / tooling caches (tests themselves are tracked)
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Local env & secrets
+.env
+.env.*
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+*.swp
+*~
+
+# Stray atomic-write temp files next to JSON reports
+inspection_system/reports/*.tmp

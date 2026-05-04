@@ -1,0 +1,72 @@
+{
+  "cycle_id": 3,
+  "part_id": "PART-00003",
+  "final_status": "ERROR",
+  "camera_results": {
+    "CAM_A": {
+      "camera_id": "CAM_A",
+      "capture_status": "OK",
+      "frame_integrity_ok": true,
+      "quality_flags": [],
+      "low_confidence": false,
+      "defects": [],
+      "confidence": 0.8644042638797389,
+      "processing_notes": []
+    },
+    "CAM_B": {
+      "camera_id": "CAM_B",
+      "capture_status": "FAILED",
+      "frame_integrity_ok": null,
+      "quality_flags": [],
+      "low_confidence": false,
+      "defects": [],
+      "confidence": null,
+      "processing_notes": [
+        "no_frame_skip_inference"
+      ]
+    }
+  },
+  "defects": [],
+  "confidence": 0.8644042638797389,
+  "quality_flags": [],
+  "error_reasons": [
+    "INSPECTION_INCOMPLETE: camera CAM_B capture not OK (FAILED)"
+  ],
+  "timing": {
+    "capture_seconds": 0.10174919996643439,
+    "processing_seconds": 0.0992995000560768,
+    "aggregation_seconds": 6.250001024454832e-05,
+    "report_seconds": 0.0008684999775141478,
+    "total_seconds": 0.20250169996870682
+  },
+  "lifecycle": [
+    {
+      "stage": "trigger",
+      "started_at": "2026-05-04T12:08:21.035218+00:00",
+      "ended_at": "2026-05-04T12:08:21.036307+00:00",
+      "part_id": "PART-00003"
+    },
+    {
+      "stage": "capture_parallel",
+      "started_at": "2026-05-04T12:08:21.036307+00:00",
+      "ended_at": "2026-05-04T12:08:21.138106+00:00"
+    },
+    {
+      "stage": "processing",
+      "started_at": "2026-05-04T12:08:21.138106+00:00",
+      "ended_at": "2026-05-04T12:08:21.237256+00:00"
+    },
+    {
+      "stage": "aggregation",
+      "started_at": "2026-05-04T12:08:21.237774+00:00",
+      "ended_at": "2026-05-04T12:08:21.237774+00:00"
+    },
+    {
+      "stage": "report",
+      "started_at": "2026-05-04T12:08:21.237774+00:00",
+      "ended_at": "2026-05-04T12:08:21.237774+00:00"
+    }
+  ],
+  "sla_violations": [],
+  "created_at": "2026-05-04T12:08:21.237774+00:00"
+}
