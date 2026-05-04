@@ -280,6 +280,14 @@ Each decision prioritizes simplicity, determinism, and reliability.
 - Persistent storage for audit and analytics  
 - Multi-station scaling with queues at plant level  
 
+### What you'd do on a real line
+
+When the inspection cycle triggers, set **`part_id`** from the real process—for example a **barcode or QR** on the fixture, **RFID**, **MES / PLC** serial with station context, or another ID source the plant already trusts. The trigger (`TriggerEvent` in `controller/trigger.py`) carries **`cycle_id`**, **`part_id`**, and **`timestamp`**; those values propagate into frames, pipeline results, and the JSON report. Matching a physical **part** to an **inspection** on the line means: use the same identifier on the trigger that production uses to track that part, so each report row is unambiguously “this part, this cycle, this outcome.”
+
+### If you want stronger matching later
+
+Tighten traceability with **duplicate detection** (e.g. reject or flag the same `part_id` twice in a short window), **persist** `(part_id, cycle_id, result, time)` to a database or MES instead of only local JSON, and **extend** the trigger/report model with optional fields such as **`lot_id`**, **`station_id`**, or **`recipe_id`** for audits, rework, and SPC.
+
 Reports are written with a **temp file plus atomic replace** (`os.replace`), so a reader never sees a truncated JSON file. If post-write SLA checks append new advisory strings (rare), the cycle is persisted again with the same atomic pattern. In production you would additionally enforce **fsync policy**, **disk quotas**, and possibly **remote object storage** with checksums.
 
 ---
