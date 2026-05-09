@@ -22,6 +22,8 @@ htmlcov/
 Thumbs.db
 *.swp
 *~
+# MS Word lock files
+~$*
 
 # Stray atomic-write temp files next to JSON reports
 inspection_system/reports/*.tmp
