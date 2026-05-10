@@ -16,7 +16,7 @@
           "description": "edge scratch cluster"
         }
       ],
-      "confidence": 0.8649436101676189,
+      "confidence": 0.8399688021775977,
       "processing_notes": []
     },
     "CAM_B": {
@@ -26,7 +26,7 @@
       "quality_flags": [],
       "low_confidence": false,
       "defects": [],
-      "confidence": 0.7963925344134188,
+      "confidence": 0.8778147607532385,
       "processing_notes": []
     }
   },
@@ -37,46 +37,46 @@
       "description": "edge scratch cluster"
     }
   ],
-  "confidence": 0.7963925344134188,
+  "confidence": 0.8399688021775977,
   "quality_flags": [],
   "error_reasons": [
     "DEFECT_FAIL:SCRATCH_TOP:CRITICAL"
   ],
   "timing": {
-    "capture_seconds": 0.07676780002657324,
-    "processing_seconds": 0.2053781000431627,
-    "aggregation_seconds": 0.0002701000194065273,
-    "report_seconds": 0.0016165999695658684,
-    "total_seconds": 0.28478550002910197
+    "capture_seconds": 0.07595830003265291,
+    "processing_seconds": 0.15264380001462996,
+    "aggregation_seconds": 0.0006807000609114766,
+    "report_seconds": 0.0,
+    "total_seconds": 0.0
   },
   "lifecycle": [
     {
       "stage": "trigger",
-      "started_at": "2026-05-04T12:08:20.750323+00:00",
-      "ended_at": "2026-05-04T12:08:20.750323+00:00",
+      "started_at": "2026-05-09T14:38:41.799723+00:00",
+      "ended_at": "2026-05-09T14:38:41.800672+00:00",
       "part_id": "PART-00002"
     },
     {
       "stage": "capture_parallel",
-      "started_at": "2026-05-04T12:08:20.750323+00:00",
-      "ended_at": "2026-05-04T12:08:20.826826+00:00"
+      "started_at": "2026-05-09T14:38:41.800672+00:00",
+      "ended_at": "2026-05-09T14:38:41.876485+00:00"
     },
     {
       "stage": "processing",
-      "started_at": "2026-05-04T12:08:20.826826+00:00",
-      "ended_at": "2026-05-04T12:08:21.032183+00:00"
+      "started_at": "2026-05-09T14:38:41.877281+00:00",
+      "ended_at": "2026-05-09T14:38:42.029256+00:00"
     },
     {
       "stage": "aggregation",
-      "started_at": "2026-05-04T12:08:21.032183+00:00",
-      "ended_at": "2026-05-04T12:08:21.033343+00:00"
+      "started_at": "2026-05-09T14:38:42.029256+00:00",
+      "ended_at": "2026-05-09T14:38:42.030898+00:00"
     },
     {
       "stage": "report",
-      "started_at": "2026-05-04T12:08:21.033343+00:00",
-      "ended_at": "2026-05-04T12:08:21.033343+00:00"
+      "started_at": "2026-05-09T14:38:42.031906+00:00",
+      "ended_at": "2026-05-09T14:38:42.031906+00:00"
     }
   ],
   "sla_violations": [],
-  "created_at": "2026-05-04T12:08:21.033343+00:00"
+  "created_at": "2026-05-09T14:38:42.031906+00:00"
 }

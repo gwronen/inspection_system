@@ -10,7 +10,7 @@
       "quality_flags": [],
       "low_confidence": false,
       "defects": [],
-      "confidence": 0.853798295874544,
+      "confidence": 0.8301996103974995,
       "processing_notes": []
     },
     "CAM_B": {
@@ -30,7 +30,7 @@
     }
   },
   "defects": [],
-  "confidence": 0.853798295874544,
+  "confidence": 0.8301996103974995,
   "quality_flags": [
     "CAM_B:HIGH_BLUR",
     "CAM_B:INVALID_FRAME"
@@ -39,40 +39,40 @@
     "INVALID_FRAME on CAM_B"
   ],
   "timing": {
-    "capture_seconds": 0.03981250000651926,
-    "processing_seconds": 0.08330280001973733,
-    "aggregation_seconds": 0.0003189999843016267,
-    "report_seconds": 0.0021288000280037522,
-    "total_seconds": 0.12667119997786358
+    "capture_seconds": 0.03848750004544854,
+    "processing_seconds": 0.10623340005986392,
+    "aggregation_seconds": 0.0001925000688061118,
+    "report_seconds": 0.0,
+    "total_seconds": 0.0
   },
   "lifecycle": [
     {
       "stage": "trigger",
-      "started_at": "2026-05-04T12:08:21.962871+00:00",
-      "ended_at": "2026-05-04T12:08:21.962871+00:00",
+      "started_at": "2026-05-09T14:38:43.012510+00:00",
+      "ended_at": "2026-05-09T14:38:43.012510+00:00",
       "part_id": "PART-00008"
     },
     {
       "stage": "capture_parallel",
-      "started_at": "2026-05-04T12:08:21.963768+00:00",
-      "ended_at": "2026-05-04T12:08:22.002554+00:00"
+      "started_at": "2026-05-09T14:38:43.013509+00:00",
+      "ended_at": "2026-05-09T14:38:43.051580+00:00"
     },
     {
       "stage": "processing",
-      "started_at": "2026-05-04T12:08:22.002554+00:00",
-      "ended_at": "2026-05-04T12:08:22.086869+00:00"
+      "started_at": "2026-05-09T14:38:43.051580+00:00",
+      "ended_at": "2026-05-09T14:38:43.157189+00:00"
     },
     {
       "stage": "aggregation",
-      "started_at": "2026-05-04T12:08:22.086869+00:00",
-      "ended_at": "2026-05-04T12:08:22.086869+00:00"
+      "started_at": "2026-05-09T14:38:43.157189+00:00",
+      "ended_at": "2026-05-09T14:38:43.157189+00:00"
     },
     {
       "stage": "report",
-      "started_at": "2026-05-04T12:08:22.087857+00:00",
-      "ended_at": "2026-05-04T12:08:22.087857+00:00"
+      "started_at": "2026-05-09T14:38:43.157189+00:00",
+      "ended_at": "2026-05-09T14:38:43.157189+00:00"
     }
   ],
   "sla_violations": [],
-  "created_at": "2026-05-04T12:08:22.087857+00:00"
+  "created_at": "2026-05-09T14:38:43.157189+00:00"
 }

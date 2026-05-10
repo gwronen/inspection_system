@@ -25,12 +25,12 @@
       "quality_flags": [],
       "low_confidence": false,
       "defects": [],
-      "confidence": 0.9033858285363663,
+      "confidence": 0.8460236464356706,
       "processing_notes": []
     }
   },
   "defects": [],
-  "confidence": 0.9033858285363663,
+  "confidence": 0.8460236464356706,
   "quality_flags": [
     "CAM_A:HIGH_GLARE",
     "CAM_A:INVALID_FRAME"
@@ -39,40 +39,40 @@
     "INVALID_FRAME on CAM_A"
   ],
   "timing": {
-    "capture_seconds": 0.05912920000264421,
-    "processing_seconds": 0.06687850004527718,
-    "aggregation_seconds": 0.00013729999773204327,
-    "report_seconds": 0.0009092999971471727,
-    "total_seconds": 0.12753920000977814
+    "capture_seconds": 0.058525700005702674,
+    "processing_seconds": 0.10413649992551655,
+    "aggregation_seconds": 0.00034060003235936165,
+    "report_seconds": 0.0,
+    "total_seconds": 0.0
   },
   "lifecycle": [
     {
       "stage": "trigger",
-      "started_at": "2026-05-04T12:08:21.238786+00:00",
-      "ended_at": "2026-05-04T12:08:21.238786+00:00",
+      "started_at": "2026-05-09T14:38:42.225450+00:00",
+      "ended_at": "2026-05-09T14:38:42.225450+00:00",
       "part_id": "PART-00004"
     },
     {
       "stage": "capture_parallel",
-      "started_at": "2026-05-04T12:08:21.238786+00:00",
-      "ended_at": "2026-05-04T12:08:21.298096+00:00"
+      "started_at": "2026-05-09T14:38:42.229913+00:00",
+      "ended_at": "2026-05-09T14:38:42.287722+00:00"
     },
     {
       "stage": "processing",
-      "started_at": "2026-05-04T12:08:21.298096+00:00",
-      "ended_at": "2026-05-04T12:08:21.365414+00:00"
+      "started_at": "2026-05-09T14:38:42.289011+00:00",
+      "ended_at": "2026-05-09T14:38:42.393140+00:00"
     },
     {
       "stage": "aggregation",
-      "started_at": "2026-05-04T12:08:21.365414+00:00",
-      "ended_at": "2026-05-04T12:08:21.365414+00:00"
+      "started_at": "2026-05-09T14:38:42.393140+00:00",
+      "ended_at": "2026-05-09T14:38:42.394403+00:00"
     },
     {
       "stage": "report",
-      "started_at": "2026-05-04T12:08:21.365414+00:00",
-      "ended_at": "2026-05-04T12:08:21.365414+00:00"
+      "started_at": "2026-05-09T14:38:42.394403+00:00",
+      "ended_at": "2026-05-09T14:38:42.394403+00:00"
     }
   ],
   "sla_violations": [],
-  "created_at": "2026-05-04T12:08:21.365414+00:00"
+  "created_at": "2026-05-09T14:38:42.394403+00:00"
 }
